@@ -1,0 +1,367 @@
+import SectionTitle from '@/components/SectionTitle';
+import { JOURNEY } from '@/data/journey.data';
+import { RECENT_WORKS } from '@/data/recentWorks.data';
+import { useScroll, useTransform, motion } from 'framer-motion';
+import {
+  ArrowRight,
+  Layers,
+  Layout,
+  ArrowUpRight,
+  ExternalLink,
+  Cpu,
+  Zap,
+  Database,
+  Globe,
+} from 'lucide-react';
+import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+const Home = () => {
+  const navigate = useNavigate();
+
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+  });
+  const heroY = useTransform(scrollYProgress, [0, 0.5], [0, 100]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
+
+  return (
+    <div ref={containerRef} className="w-full">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-white">
+        <motion.div
+          style={{
+            y: heroY,
+            opacity: heroOpacity,
+          }}
+          className="relative z-10 text-center px-6"
+        >
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 30,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.8,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          >
+            <span className="inline-block text-[8px] min-[500px]:text-xs font-bold uppercase tracking-[0.4em] text-[#C5A059] mb-4">
+              Intelligent Software Solutions
+            </span>
+            <h1 className="text-4xl min-[500px]:text-6xl md:text-[100px] lg:text-[120px] font-bold tracking-tight text-[#0D3D3D] leading-[0.9] mb-4 md:mb-12">
+              AI-Driven <br />{' '}
+              <span className="italic font-light text-slate-400">Digital Systems.</span>
+            </h1>
+            <p className="text-md min-[500px]:text-lg  md:text-2xl  text-slate-500 max-w-2xl mx-auto leading-relaxed mb-12 font-medium">
+              We design and build intelligent management platforms and custom digital products for
+              individuals and organizations
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <button
+                onClick={() => navigate('/solutions')}
+                className="cursor-pointer group relative px-10 py-5 bg-[#0D3D3D] text-white text-xs md:text-md font-bold uppercase tracking-widest rounded-full overflow-hidden transition-all hover:scale-105"
+              >
+                <div className="relative z-10 flex items-center gap-2">
+                  Explore Solutions{' '}
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </div>
+                <div className="absolute inset-0 bg-slate-900 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+              </button>
+              <button
+                onClick={() => navigate('/contact')}
+                className="cursor-pointer text-sm font-bold uppercase tracking-widest text-slate-900 border-b-2 border-slate-900 pb-1 hover:text-[#C5A059] hover:border-[#C5A059] transition-all"
+              >
+                Start a Project
+              </button>
+            </div>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* Services Grid - Epam style */}
+      <section className="py-20 md:py-32 bg-[#F9FAFB]">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+          <SectionTitle
+            subtitle="Expertise"
+            title="Modern software systems."
+            description="Our core areas of focus are designed to transform complex business challenges into seamless digital experiences."
+          />
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-4">
+            <motion.div
+              whileHover={{
+                y: -8,
+              }}
+              className="bg-white p-6 pt-10 pb-10 md:p-16 rounded-[40px] shadow-sm border border-slate-100 flex flex-col justify-between group transition-all"
+            >
+              <div>
+                <div className="w-16 h-16 bg-[#0D3D3D] rounded-2xl flex items-center justify-center text-white mb-10 group-hover:scale-110 transition-transform duration-500">
+                  <Layers size={30} />
+                </div>
+                <h3 className="text-3xl font-semibold text-slate-900 mb-6">
+                  Intelligent Management Systems
+                </h3>
+                <p className="text-md md:text-lg text-slate-600 leading-relaxed mb-8">
+                  Management platforms for schools, hospitals, and salons that simplify operations,
+                  records, appointments and day-to-day management.
+                </p>
+              </div>
+              <button
+                onClick={() => navigate('/solutions')}
+                className=" cursor-pointer flex items-center gap-3 text-sm font-bold uppercase tracking-[0.2em] text-[#C5A059] group-hover:gap-5 transition-all"
+              >
+                Learn More <ArrowRight size={18} />
+              </button>
+            </motion.div>
+
+            <motion.div
+              whileHover={{
+                y: -8,
+              }}
+              className="bg-[#0D3D3D] p-6 pt-10 pb-10 md:p-16 rounded-[40px] shadow-xl shadow-teal-900/10 flex flex-col justify-between group transition-all"
+            >
+              <div>
+                <div className="w-16 h-16 bg-[#C5A059] rounded-2xl flex items-center justify-center text-white mb-10 group-hover:scale-110 transition-transform duration-500">
+                  <Layout size={30} />
+                </div>
+                <h3 className="text-3xl font-semibold text-white mb-6">
+                  Custom Digital Architecture
+                </h3>
+                <p className="text-lg text-white/70 leading-relaxed mb-8">
+                  From SaaS platforms to web and mobile applications, we build custom software
+                  designed to scale with your business.
+                </p>
+              </div>
+              <button
+                onClick={() => navigate('/custom')}
+                className=" cursor-pointer flex items-center gap-3 text-sm font-bold uppercase tracking-[0.2em] text-[#C5A059] group-hover:gap-5 transition-all"
+              >
+                Explore Services <ArrowRight size={18} />
+              </button>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Recent Works Section - New */}
+      <section className="py-20 md:py-32 bg-white">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+          <SectionTitle
+            subtitle="Portfolio"
+            title="Selected Works."
+            description="A glimpse into the intelligent systems we've architected for industry leaders."
+          />
+          <div className="flex justify-end -mt-10 mb-10 md:mt-0 ">
+            <button
+              onClick={() => navigate('/solutions')}
+              className=" flex items-center gap-2 text-sm font-bold uppercase  text-slate-400 hover:text-[#0D3D3D] transition-colors group"
+            >
+              View All Projects{' '}
+              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </button>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-20 lg:gap-8">
+            {RECENT_WORKS.map((work, i) => (
+              <motion.div
+                key={i}
+                initial={{
+                  opacity: 0,
+                  y: 30,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{
+                  once: true,
+                }}
+                transition={{
+                  delay: i * 0.1,
+                  duration: 0.8,
+                }}
+                className="group"
+              >
+                <div className="relative aspect-[4/5] overflow-hidden rounded-[40px] bg-slate-100 mb-8 shadow-md">
+                  <img
+                    src={work.image}
+                    alt={work.title}
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0D3D3D]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-8 left-8 right-8 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                    <button className="cursor-pointer w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#0D3D3D] shadow-xl">
+                      <ExternalLink size={20} />
+                    </button>
+                  </div>
+                </div>
+                <div className="px-4">
+                  <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#C5A059] mb-3 block">
+                    {work.category}
+                  </span>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-3">{work.title}</h3>
+                  <p className="text-slate-500 leading-relaxed line-clamp-2">{work.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* AI Philosophy*/}
+      <section className="py-20 md:py-32 bg-white overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <div className="lg:col-span-7">
+              <span className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#C5A059] mb-8 block">
+                Our Approach
+              </span>
+              <h2 className="text-4xl md:text-5xl  font-semibold text-[#0D3D3D] leading-tight mb-5">
+                AI Driven <br /> <span className="text-slate-300">Software Engineering.</span>
+              </h2>
+              <p className="text-md md:text-lg text-slate-600 leading-relaxed mb-5 md:mb-10">
+                AI isn't just a feature we add; it's the foundation of how we build software. We
+                combine intelligent tools with modern engineering practices to create systems that
+                are faster to develop, easier to maintain, and designed to scale.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-8">
+                {[
+                  {
+                    icon: <Cpu />,
+                    title: 'Intelligent Architecture',
+                  },
+                  {
+                    icon: <Zap />,
+                    title: 'Faster Development',
+                  },
+                  {
+                    icon: <Database />,
+                    title: 'Data Infrastructure',
+                  },
+                  {
+                    icon: <Globe />,
+                    title: 'Scalable Systems',
+                  },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-slate-50 rounded-xl flex items-center justify-center text-[#0D3D3D]">
+                      {item.icon}
+                    </div>
+                    <span className="font-bold text-slate-800">{item.title}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="lg:col-span-5">
+              <div className="relative aspect-square rounded-[60px] bg-[#F3F6F6] flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-0 opacity-20 pointer-events-none">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_#C5A059_0%,_transparent_50%)]" />
+                </div>
+                <motion.div
+                  animate={{
+                    rotate: 360,
+                  }}
+                  transition={{
+                    duration: 50,
+                    repeat: Infinity,
+                    ease: 'linear',
+                  }}
+                  className="w-3/4 h-3/4 border-[1px] border-dashed border-[#0D3D3D]/30 rounded-full flex items-center justify-center"
+                >
+                  <div className="w-1/2 h-1/2 border-[1px] border-dashed border-[#C5A059]/50 rounded-full" />
+                </motion.div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-32 h-32 bg-white rounded-3xl shadow-2xl flex items-center justify-center">
+                    <Cpu className="w-16 h-16 text-[#0D3D3D]" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section - Vertical Timeline style */}
+      <section className="py-20 md:py-32 bg-[#0D3D3D] text-white">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+          <SectionTitle
+            subtitle="The Journey"
+            title="A standard for precision."
+            description="Our delivery model combines rapid prototyping with rigorous engineering to bring your vision to life."
+            light
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8">
+            {JOURNEY.map((step, i) => (
+              <motion.div
+                key={i}
+                initial={{
+                  opacity: 0,
+                  y: 20,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{
+                  once: true,
+                }}
+                transition={{
+                  delay: i * 0.1,
+                }}
+                className="group cursor-default"
+              >
+                <div className="text-[11px] font-bold tracking-[0.2em] text-[#C5A059] mb-4">
+                  {step.id}
+                </div>
+                <div className="h-[1px] w-full bg-white/10 mb-6 group-hover:bg-[#C5A059] transition-all duration-500" />
+                <h4 className="text-xl font-bold mb-2">{step.title}</h4>
+                <p className="text-sm text-white/40">{step.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-40 bg-white relative overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 text-center">
+          <motion.div
+            initial={{
+              opacity: 0,
+              scale: 0.9,
+            }}
+            whileInView={{
+              opacity: 1,
+              scale: 1,
+            }}
+            viewport={{
+              once: true,
+            }}
+            className="bg-[#F8FAFA] p-10 md:p-24 rounded-[80px] border border-slate-100 relative overflow-hidden"
+          >
+            <div className="relative z-10">
+              <h2 className="text-4xl md:text-7xl font-bold text-[#0D3D3D] tracking-tight mb-12">
+                Ready to start <br />
+                <span className="italic font-light text-slate-400">a project?</span>
+              </h2>
+              <button
+                onClick={() => navigate('/contact')}
+                className="cursor-pointer p-6 md:px-12 md:py-6 bg-[#0D3D3D] text-white text-[11px]  min-[450px]:text-sm font-bold uppercase tracking-[0.3em] rounded-full hover:scale-105 transition-all shadow-2xl shadow-teal-900/20"
+              >
+                Start a Conversation
+              </button>
+            </div>
+            <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#C5A059]/10 blur-[80px] rounded-full translate-x-1/2 translate-y-1/2" />
+          </motion.div>
+        </div>
+      </section>
+    </div>
+  );
+};
+export default Home;
