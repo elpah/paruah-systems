@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Mail, Phone, CheckCircle2 } from 'lucide-react';
 import { useState } from 'react';
+import SharedHero from '@/components/SharedHero';
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -9,45 +10,71 @@ const Contact = () => {
     setSubmitted(true);
   };
   return (
-    <div className="pt-40 pb-24 bg-white">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 ">
+    <div className="pb-24 bg-white">
+      <SharedHero
+        cat="CONNECT"
+        header="Let's Engineer"
+        italicHeader="what's next"
+        paragraph="Tell us about your idea or project, and we’ll help you turn it into a reliable digital system."
+      />
+      <div className="max-w-[1400px] mx-auto pt-24 px-6 md:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-2 md:gap-4 ">
           <div className="lg:col-span-5 mb-20">
-            <span className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#C5A059] mb-4 block">
-              Connect
-            </span>
-            <h1 className="text-6xl font-bold text-[#0D3D3D] tracking-tight leading-[1.1] mb-4 md:mb-12">
-              Let's build <br />{' '}
-              <span className="text-slate-300 italic font-light">what's next.</span>
-            </h1>
-            <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-16 max-w-md">
-              Tell us about your idea or project, and we’ll help you turn it into a reliable digital
-              system.
-            </p>
-
-            <div className="space-y-10">
-              <div className="flex items-start gap-6">
-                <div className="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center text-[#C5A059] shrink-0">
+            <motion.p
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.8,
+                delay: 0.3,
+              }}
+              className="mb-3 text-md text-slate-600 max-w-lg leading-relaxed"
+            >
+              Our team responds to every inquiry within 24 hours. No bots, no auto-replies.
+            </motion.p>
+            <div className="space-y-6">
+              <a
+                href="mailto:info@paruah.com"
+                className="cursor-pointer max-w-md flex items-start gap-6 p-6 rounded-2xl bg-[#F7F9F9] hover:bg-[#EEF3F3] transition-all duration-300 group"
+              >
+                <div className="w-12 h-12 rounded-md bg-white flex items-center justify-center text-[#C5A059] shrink-0 group-hover:scale-105 transition-transform">
                   <Mail size={24} />
                 </div>
+
                 <div>
                   <h4 className="text-[11px] font-bold uppercase tracking-[0.1em] text-slate-400 mb-1">
                     Direct Email
                   </h4>
-                  <p className="text-lg font-semibold text-slate-600">info@paruah.com</p>
+
+                  <p className="text-lg font-semibold text-slate-700 group-hover:text-[#0D3D3D] transition-colors">
+                    info@paruah.com
+                  </p>
                 </div>
-              </div>
-              <div className="flex items-start gap-6">
-                <div className="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center text-[#C5A059] shrink-0">
+              </a>
+
+              <a
+                href="tel:+15550000000"
+                className="cursor-pointer max-w-md flex items-start gap-6 p-6 rounded-2xl bg-[#F7F9F9] hover:bg-[#EEF3F3] transition-all duration-300 group"
+              >
+                <div className="w-12 h-12 rounded-md bg-white flex items-center justify-center text-[#C5A059] shrink-0 group-hover:scale-105 transition-transform">
                   <Phone size={24} />
                 </div>
+
                 <div>
                   <h4 className="text-[11px] font-bold uppercase tracking-[0.1em] text-slate-400 mb-1">
                     Office Line
                   </h4>
-                  <p className="text-lg font-semibold text-slate-600">+1 (555) 000-0000</p>
+
+                  <p className="text-lg font-semibold text-slate-700 group-hover:text-[#0D3D3D] transition-colors">
+                    +1 (555) 000-0000
+                  </p>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
 
@@ -72,7 +99,7 @@ const Contact = () => {
                   </p>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4 relative z-10">
+                <form onSubmit={handleSubmit} className="space-y-4 relative z-2">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label className="text-[11px] font-bold uppercase tracking-widest text-slate-400 ml-1">
@@ -133,9 +160,9 @@ const Contact = () => {
                   </div>
                   <button
                     type="submit"
-                    className="w-full py-5 bg-[#0D3D3D] text-white text-xs font-bold uppercase tracking-[0.3em] rounded-2xl hover:bg-slate-900 transition-all shadow-xl shadow-teal-900/10 active:scale-95"
+                    className="cursor-pointer w-full py-5 bg-[#0D3D3D] text-white text-xs font-bold uppercase tracking-[0.3em] rounded-2xl hover:bg-slate-900 transition-all shadow-xl shadow-teal-900/10 active:scale-95"
                   >
-                    Transmit Message
+                    Send Message
                   </button>
                 </form>
               )}
