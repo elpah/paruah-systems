@@ -50,8 +50,8 @@ const Home = () => {
               ease: [0.22, 1, 0.36, 1],
             }}
           >
-            <span className="inline-block text-[8px] min-[500px]:text-xs font-bold uppercase tracking-[0.4em] text-[#C5A059] mb-4">
-              Intelligent Software Solutions
+            <span className="inline-block text-[11px] min-[500px]:text-xs font-bold uppercase tracking-[0.4em] text-[#C5A059] mb-4">
+              Intelligent Software
             </span>
             <h1 className="text-4xl min-[500px]:text-6xl md:text-[100px] lg:text-[120px] font-bold tracking-tight text-[#0D3D3D] leading-[0.9] mb-4 md:mb-12">
               AI-Driven <br />{' '}
@@ -82,8 +82,6 @@ const Home = () => {
           </motion.div>
         </motion.div>
       </section>
-
-      {/* Services Grid - Epam style */}
       <section className="py-20 md:py-32 bg-[#F9FAFB]">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
           <SectionTitle

@@ -4,7 +4,7 @@ type SharedHeroProps = {
   cat: string;
   header: string;
   italicHeader: string;
-  paragraph: string;
+  paragraph?: string;
 };
 const SharedHero = ({ cat, header, italicHeader, paragraph }: SharedHeroProps) => {
   return (
