@@ -1,17 +1,17 @@
 import { lazy, Suspense } from 'react';
-import {  Theme } from './settings/types';
+import { Theme } from './settings/types';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import NotFound from './pages/NotFound';
+// import NotFound from './pages/NotFound';
 import Home from './pages/Home';
 
-const About = lazy(() => import('./pages/About'));
-const Contact = lazy(() => import('./pages/Contact'));
-const Solutions = lazy(() => import('./pages/Solutions'));
-const CustomDev = lazy(() => import('./pages/CustomDev'));
+// const About = lazy(() => import('./pages/About'));
+// const Contact = lazy(() => import('./pages/Contact'));
+// const Solutions = lazy(() => import('./pages/Solutions'));
+// const CustomDev = lazy(() => import('./pages/CustomDev'));
 
-let theme: Theme = 'light';
+const theme: Theme = 'light';
 
 function App() {
   function setTheme(theme: Theme) {
@@ -31,11 +31,11 @@ function App() {
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
+            {/* <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/custom" element={<CustomDev />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="*" element={<NotFound />} /> */}
           </Routes>
         </Suspense>
       </div>
