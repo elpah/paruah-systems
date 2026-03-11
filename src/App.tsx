@@ -10,6 +10,7 @@ const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Solutions = lazy(() => import('./pages/Solutions'));
 const CustomDev = lazy(() => import('./pages/CustomDev'));
+const Projects = lazy(() => import('./pages/Projects'));
 
 const theme: Theme = 'light';
 
@@ -35,10 +36,8 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/custom" element={<CustomDev />} />
             <Route path="*" element={<NotFound />} />
-             <Route path="/solutions" element={<Solutions />} />
-            {/* 
-           
-          */}
+            <Route path="/solutions" element={<Solutions />} />
+            <Route path="/projects" element={<Projects />} />
           </Routes>
         </Suspense>
       </div>

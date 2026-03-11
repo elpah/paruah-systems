@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Mail, Phone, CheckCircle2, LucideIcon } from 'lucide-react';
 import { useState } from 'react';
-import SharedHero from '@/components/SharedHero';
+import SharedHero from '@/components/sharedUi/SharedHero';
 
 type ContactInfoCardProps = {
   href: string;
@@ -133,11 +133,7 @@ const Contact = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <FormField label="Entity">
-                      <input
-                        type="text"
-                        placeholder="Company Name"
-                        className={inputClassName}
-                      />
+                      <input type="text" placeholder="Company Name" className={inputClassName} />
                     </FormField>
 
                     <FormField label="Type">
