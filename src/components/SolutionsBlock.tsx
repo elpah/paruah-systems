@@ -7,11 +7,7 @@ type CategoryBadgeProps = {
   textColor?: string;
 };
 
-const CategoryBadge = ({
-  icon: Icon,
-  label,
-  textColor = 'text-[#0D3D3D]',
-}: CategoryBadgeProps) => (
+const CategoryBadge = ({ icon: Icon, label, textColor = 'text-[#0D3D3D]' }: CategoryBadgeProps) => (
   <div className="inline-block px-4 py-1.5 bg-[#F3F6F6] border border-slate-200 rounded-full mb-8">
     <span
       className={`text-[10px] font-bold uppercase tracking-[0.25em] flex items-center gap-2 ${textColor}`}
@@ -24,7 +20,7 @@ const CategoryBadge = ({
 
 const FeatureList = ({ items }: { items: string[] }) => (
   <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6 mb-12">
-    {items.map((item) => (
+    {items.map(item => (
       <div key={item} className="flex items-center gap-3">
         <CheckCircle2 className="w-5 h-5 text-[#C5A059] shrink-0" />
         <span className="text-sm font-semibold text-slate-800">{item}</span>
@@ -33,20 +29,16 @@ const FeatureList = ({ items }: { items: string[] }) => (
   </div>
 );
 
-const GroupedFeatureList = ({
-  groups,
-}: {
-  groups: { title: string; items: string[] }[];
-}) => (
+const GroupedFeatureList = ({ groups }: { groups: { title: string; items: string[] }[] }) => (
   <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
-    {groups.map((group) => (
+    {groups.map(group => (
       <div key={group.title}>
         <h4 className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#C5A059] mb-6">
           {group.title}
         </h4>
 
         <ul className="space-y-4">
-          {group.items.map((item) => (
+          {group.items.map(item => (
             <li key={item} className="flex items-center gap-3 text-sm font-semibold text-slate-800">
               <CheckCircle2 className="w-5 h-5 text-[#C5A059] shrink-0" />
               <span>{item}</span>
