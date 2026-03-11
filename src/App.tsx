@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect } from 'react';
 import { Theme } from './settings/types';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import NotFound from './pages/NotFound';
@@ -51,6 +52,7 @@ function App() {
         </Suspense>
       </div>
       <Footer />
+      <Analytics />
     </div>
   );
 }
