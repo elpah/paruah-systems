@@ -8,8 +8,8 @@ import Home from './pages/Home';
 
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
-// const Solutions = lazy(() => import('./pages/Solutions'));
-// const CustomDev = lazy(() => import('./pages/CustomDev'));
+const Solutions = lazy(() => import('./pages/Solutions'));
+const CustomDev = lazy(() => import('./pages/CustomDev'));
 
 const theme: Theme = 'light';
 
@@ -33,12 +33,11 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-
-            <Route path="*" element={<NotFound />} />
-            {/* 
-          
-            <Route path="/solutions" element={<Solutions />} />
             <Route path="/custom" element={<CustomDev />} />
+            <Route path="*" element={<NotFound />} />
+             <Route path="/solutions" element={<Solutions />} />
+            {/* 
+           
           */}
           </Routes>
         </Suspense>
