@@ -1,4 +1,4 @@
-type Page = 'home' | 'solutions' | 'custom' | 'about' | 'contact';
+type Page = 'home' | 'solutions' | 'custom' | 'about' | 'contact' | 'projects';
 
 interface NavLink {
   name: string;
@@ -12,6 +12,10 @@ export const NAV_LINKS: NavLink[] = [
   {
     name: 'Custom Dev',
     id: 'custom',
+  },
+  {
+    name: 'Projects',
+    id: 'projects',
   },
   {
     name: 'About',
