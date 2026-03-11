@@ -1,6 +1,6 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { Theme } from './settings/types';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import NotFound from './pages/NotFound';
@@ -15,6 +15,8 @@ const Projects = lazy(() => import('./pages/Projects'));
 const theme: Theme = 'light';
 
 function App() {
+  const { pathname } = useLocation();
+
   function setTheme(theme: Theme) {
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
@@ -23,6 +25,13 @@ function App() {
     }
   }
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, [pathname]);
+  setTheme(theme);
   setTheme(theme);
 
   return (
