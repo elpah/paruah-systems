@@ -5,6 +5,7 @@ export const RECENT_WORKS = [
     description:
       'A modern website designed for a travel and tour agency to showcase destinations, services, and attract new clients.',
     image: '/images/travelAgency.png',
+    link: 'https://www.elpatravelconsult.com/',
   },
   {
     title: 'ICGC Living Word Temple',
@@ -12,13 +13,14 @@ export const RECENT_WORKS = [
     description:
       'Designed for a church to share sermons, announce events, and connect with its community online.',
     image: '/images/icgclwt.png',
+    link: 'icgclwt.com',
   },
   {
-    title: 'El-Gate Properties',
-    category: 'Real Estate',
+    title: 'ZaurAutos',
+    category: 'Automobile',
     description:
-      'A modern website designed for a real estate company to showcase properties, highlight services, and capture client inquiries.',
-    image:
-      'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop',
+      'A web application for a car company to showcase vehicles, share company services, and collect customer inquiries.',
+    image: '/images/zaurAutos.png',
+    link: 'https://www.zaurautos.com/',
   },
 ];

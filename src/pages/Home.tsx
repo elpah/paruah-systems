@@ -248,7 +248,6 @@ const Home = () => {
                 combine intelligent tools with modern engineering practices to create systems that
                 are faster to develop, easier to maintain, and designed to scale.
               </p>
-
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-8">
                 {APPROACH_ITEMS.map(item => {
                   const Icon = item.icon;
@@ -266,30 +265,17 @@ const Home = () => {
             </div>
 
             <div className="lg:col-span-5">
-              <div className="relative aspect-square rounded-[60px] bg-[#F3F6F6] flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 opacity-20 pointer-events-none">
+              <div className="relative aspect-square  flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-0  opacity-20 pointer-events-none">
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_#C5A059_0%,_transparent_50%)]" />
                 </div>
-
-                <motion.div
-                  animate={shouldReduceMotion ? undefined : { rotate: 360 }}
-                  transition={
-                    shouldReduceMotion
-                      ? undefined
-                      : {
-                          duration: 80,
-                          repeat: Infinity,
-                          ease: 'linear',
-                        }
-                  }
-                  className="w-3/4 h-3/4 border border-dashed border-[#0D3D3D]/30 rounded-full flex items-center justify-center"
-                >
-                  <div className="w-1/2 h-1/2 border border-dashed border-[#C5A059]/50 rounded-full" />
-                </motion.div>
-
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-32 h-32 bg-white rounded-3xl shadow-2xl flex items-center justify-center">
-                    <Cpu className="w-16 h-16 text-[#0D3D3D]" />
+                  <div className="w-full h-full rounded-3xl shadow-2xl flex items-center justify-center overflow-hidden">
+                    <img
+                      src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop"
+                      alt="AI Image"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
               </div>

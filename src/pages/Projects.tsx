@@ -2,6 +2,7 @@ import SharedHero from '@/components/sharedUi/SharedHero';
 import { ALL_PROJECTS } from '@/data/allProjects.data';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
+import { c } from 'node_modules/framer-motion/dist/types.d-6pKw1mTI';
 import { useState } from 'react';
 
 const Projects = () => {
@@ -9,7 +10,6 @@ const Projects = () => {
   const filteredProjects = ALL_PROJECTS.filter(p => filter === 'all' || p.type === filter);
   return (
     <div className="w-full">
-      {/* Hero */}
       <SharedHero
         cat="Portfolio"
         header="Selected"
