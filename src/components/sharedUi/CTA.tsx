@@ -23,7 +23,6 @@ const CTA = () => {
 
             <button
               onClick={() => navigate('/contact')}
-              aria-label="Contact"
               className="cursor-pointer p-6 md:px-12 md:py-6 bg-[#0D3D3D] text-white text-[11px] min-[450px]:text-sm font-bold uppercase tracking-[0.3em] rounded-full transition-transform duration-300 hover:scale-105 shadow-2xl shadow-teal-900/20"
             >
               Start a Conversation

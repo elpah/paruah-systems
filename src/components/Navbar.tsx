@@ -37,6 +37,8 @@ const Navbar = () => {
     setMobileMenuOpen(false);
   }, [location.pathname]);
 
+  const hamburgerWhite = location.pathname !== '/' && !scrolled;
+
   return (
     <>
       <nav
@@ -105,9 +107,17 @@ const Navbar = () => {
             aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? (
-              <X aria-hidden="true" size={24} />
+              <X
+                aria-hidden="true"
+                size={24}
+                className={hamburgerWhite ? 'text-slate-300' : 'text-slate-900'}
+              />
             ) : (
-              <Menu aria-hidden="true" size={24} />
+              <Menu
+                aria-hidden="true"
+                size={24}
+                className={hamburgerWhite ? 'text-slate-300' : 'text-slate-900'}
+              />
             )}
           </button>
         </div>
