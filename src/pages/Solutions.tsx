@@ -14,7 +14,7 @@ const Solutions = () => {
       />
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-30">
-        {SOLUTION_PROJECTS.map((project) => (
+        {SOLUTION_PROJECTS.map(project => (
           <SolutionsBlock key={project.id} project={project} />
         ))}
       </div>
