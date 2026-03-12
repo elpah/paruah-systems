@@ -6,13 +6,13 @@ import MissionVision from '@/components/about/MissionVision';
 
 const About = () => {
   return (
-    <div className=" bg-white">
+    <main className=" bg-white">
       <AboutHero />
       <AboutStory />
       <MissionVision />
       <AboutTeamSection />
       <AboutValues />
-    </div>
+    </main>
   );
 };
 

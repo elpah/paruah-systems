@@ -66,7 +66,7 @@ const Home = () => {
   );
 
   return (
-    <div ref={containerRef} className="w-full">
+    <main ref={containerRef} className="w-full">
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
         <motion.div
           style={
@@ -101,7 +101,10 @@ const Home = () => {
               >
                 <div className="relative z-10 flex items-center gap-2">
                   Explore Solutions
-                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  <ArrowRight
+                    aria-hidden="true"
+                    className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                  />
                 </div>
                 <div className="absolute inset-0 bg-slate-900 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
               </button>
@@ -144,7 +147,7 @@ const Home = () => {
                 onClick={() => navigate('/solutions')}
                 className="cursor-pointer flex items-center gap-3 text-sm font-bold uppercase tracking-[0.2em] text-[#C5A059] transition-all duration-300 group-hover:gap-5"
               >
-                Learn More <ArrowRight size={18} />
+                Learn More <ArrowRight aria-hidden="true" size={18} />
               </button>
             </div>
 
@@ -166,7 +169,7 @@ const Home = () => {
                 onClick={() => navigate('/custom')}
                 className="cursor-pointer flex items-center gap-3 text-sm font-bold uppercase tracking-[0.2em] text-[#C5A059] transition-all duration-300 group-hover:gap-5"
               >
-                Explore Services <ArrowRight size={18} />
+                Explore Services <ArrowRight aria-hidden="true" size={18} />
               </button>
             </div>
           </div>
@@ -187,7 +190,10 @@ const Home = () => {
               className="flex items-center gap-2 text-sm font-bold uppercase text-slate-400 hover:text-[#0D3D3D] transition-colors group"
             >
               View All Projects
-              <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight
+                aria-hidden="true"
+                className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              />
             </button>
           </div>
 
@@ -211,8 +217,11 @@ const Home = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0D3D3D]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="absolute bottom-8 left-8 right-8 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                    <button className="cursor-pointer w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#0D3D3D] shadow-xl">
-                      <ExternalLink size={20} />
+                    <button
+                      aria-label="Open project in new tab"
+                      className="cursor-pointer w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#0D3D3D] shadow-xl"
+                    >
+                      <ExternalLink aria-hidden="true" size={20} />
                     </button>
                   </div>
                 </div>
@@ -315,7 +324,7 @@ const Home = () => {
         </div>
       </section>
       <CTA />
-    </div>
+    </main>
   );
 };
 

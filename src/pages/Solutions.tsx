@@ -5,7 +5,7 @@ import { SOLUTION_PROJECTS } from '@/data/solutionsProjects.data';
 
 const Solutions = () => {
   return (
-    <div className="pb-10 bg-white">
+    <main className="pb-10 bg-white">
       <SharedHero
         cat="Platforms"
         header="Intelligent."
@@ -20,7 +20,7 @@ const Solutions = () => {
       </div>
 
       <CTA />
-    </div>
+    </main>
   );
 };
 

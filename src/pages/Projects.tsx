@@ -9,7 +9,7 @@ const Projects = () => {
   const [filter, setFilter] = useState<'all' | 'solutions' | 'custom'>('all');
   const filteredProjects = ALL_PROJECTS.filter(p => filter === 'all' || p.type === filter);
   return (
-    <div className="w-full">
+    <main className="w-full">
       <SharedHero
         cat="Portfolio"
         header="Selected"
@@ -76,7 +76,7 @@ const Projects = () => {
           ))}
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

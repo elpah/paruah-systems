@@ -56,7 +56,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="pb-24 bg-white">
+    <main className="pb-24 bg-white">
       <SharedHero
         cat="CONNECT"
         header="Let's Engineer"
@@ -172,7 +172,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

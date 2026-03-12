@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 const CustomDev = () => {
   const navigate = useNavigate();
   return (
-    <div className=" bg-white">
+    <main className=" bg-white">
       <SharedHero cat="Services" header="   Bespoke Digital" italicHeader="Engineering" />
 
       <div className="max-w-[1400px] pt-40 mx-auto px-6 md:px-12">
@@ -98,7 +98,10 @@ const CustomDev = () => {
               className="cursor-pointer text-sm font-bold uppercase tracking-widest text-slate-400 hover:text-[#0D3D3D] transition-colors flex items-center gap-2 group  mb-10"
             >
               Explore All{' '}
-              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <ArrowUpRight
+                aria-hidden="true"
+                className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+              />
             </button>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-15 md:gap-8">
@@ -148,7 +151,7 @@ const CustomDev = () => {
         </div>
       </section>
       <CloudSection />
-    </div>
+    </main>
   );
 };
 export default CustomDev;
