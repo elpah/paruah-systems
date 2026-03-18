@@ -2,6 +2,7 @@ import { NAV_LINKS } from '@/data/navlinks.data';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Menu } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { set } from 'react-hook-form';
 import { NavLink, useLocation } from 'react-router-dom';
 
 const drawer = {
@@ -44,6 +45,7 @@ const Navbar = () => {
       >
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 h-[72px] md:h-[88px] flex justify-between items-center">
           <NavLink
+            onClick={() => setMobileMenuOpen(false)}
             to="/"
             className="flex items-center gap-3 group transition-opacity hover:opacity-90"
           >
