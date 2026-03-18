@@ -2,7 +2,6 @@ import { NAV_LINKS } from '@/data/navlinks.data';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Menu } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { set } from 'react-hook-form';
 import { NavLink, useLocation } from 'react-router-dom';
 
 const drawer = {
