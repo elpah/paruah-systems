@@ -5,12 +5,12 @@ export const ABOUT_TEAM = [
     image: '',
   },
   {
-    name: 'Place Holder',
+    name: 'Place Holder1',
     role: 'Head of AI Engineering',
     image: '',
   },
   {
-    name: 'Place Holder',
+    name: 'Place Holder2',
     role: 'Designer',
     image: '',
   },

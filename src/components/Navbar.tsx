@@ -33,10 +33,6 @@ const Navbar = () => {
     };
   }, [mobileMenuOpen]);
 
-  useEffect(() => {
-    setMobileMenuOpen(false);
-  }, [location.pathname]);
-
   const hamburgerWhite = location.pathname !== '/' && !scrolled;
 
   return (
