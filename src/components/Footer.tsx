@@ -1,16 +1,17 @@
 import { NAV_LINKS } from '@/data/navlinks.data';
-import { Mail, Phone, Facebook, Instagram, Linkedin } from 'lucide-react';
-import { SiX } from 'react-icons/si';
+import { Mail, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { SiX, SiWhatsapp } from 'react-icons/si';
 import { Link } from 'react-router-dom';
 
 const SOCIAL_LINKS = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/company/paruah', Icon: Linkedin },
   { label: 'X', href: 'https://x.com/paruah', Icon: SiX },
-  { label: 'Instagram', href: 'https://instagram.com', Icon: Instagram },
+  { label: 'Instagram', href: 'https://instagram.com/paruah_systems', Icon: Instagram },
   { label: 'Facebook', href: 'https://facebook.com', Icon: Facebook },
 ];
 
 const SOLUTIONS_LINKS = [
+  { label: 'Patient Management', to: '/solutions' },
   { label: 'School Management', to: '/solutions' },
   { label: 'Salon Management', to: '/solutions' },
   { label: 'SaaS Development', to: '/custom' },
@@ -18,8 +19,6 @@ const SOLUTIONS_LINKS = [
 ];
 
 const Footer = () => {
-  const year = new Date().getFullYear();
-
   return (
     <footer
       className="bg-[#051515] text-white pt-24 pb-12 overflow-hidden relative"
@@ -37,13 +36,7 @@ const Footer = () => {
               to="/"
               className="inline-flex items-center gap-3 mb-6 hover:opacity-90 transition-opacity"
             >
-              <span className="w-10 h-10 flex items-center justify-center bg-[#C5A059] rounded-xl">
-                <span className="text-white font-bold text-lg">P</span>
-              </span>
-
-              <span className="text-xl font-bold tracking-tight">
-                PARUAH <span className="text-[#C5A059] font-light italic">SYSTEMS</span>
-              </span>
+              <img src="/logo.png" alt="Logo" className="h-15  w-auto" />
             </Link>
 
             <p className="text-slate-400 text-sm md:text-base leading-relaxed max-w-sm md:max-w-xl lg:max-w-sm mb-6">
@@ -130,14 +123,14 @@ const Footer = () => {
                   </li>
 
                   <li className="flex items-start gap-3">
-                    <Phone className="w-5 h-5 text-[#C5A059]" />
+                    <SiWhatsapp className="w-5 h-5 text-[#C5A059]" />
                     <div>
                       <p className="text-[10px] font-bold uppercase text-white/30 mb-1">Support</p>
                       <a
-                        href="tel:+15550000000"
+                        href="https://wa.me/31627499165"
                         className="text-sm   text-slate-300 hover:text-[#C5A059] transition-colors"
                       >
-                        +1 (555) 000-0000
+                        +31 62 749 9165
                       </a>
                     </div>
                   </li>
@@ -149,7 +142,7 @@ const Footer = () => {
 
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <small className="text-[11px]  tracking-[0.1em] text-white/30 uppercase">
-            © {year} Paruah Systems. All Rights Reserved.
+            © 2026 Paruah Systems. All Rights Reserved.
           </small>
 
           <nav aria-label="Legal">

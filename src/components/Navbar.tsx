@@ -42,31 +42,18 @@ const Navbar = () => {
           scrolled ? 'bg-white/80 backdrop-blur-xl border-b border-slate-100' : 'bg-transparent'
         }`}
       >
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 h-[72px] md:h-[88px] flex justify-between items-center">
-          <NavLink
-            onClick={() => setMobileMenuOpen(false)}
-            to="/"
-            className="flex items-center gap-3 group transition-opacity hover:opacity-90"
-          >
-            <div className="relative w-10 h-10 flex items-center justify-center bg-[#0D3D3D] rounded-xl">
-              <span className="text-white font-bold text-lg">P</span>
-            </div>
-
-            <div className="flex flex-col -space-y-1">
-              <span className="text-lg font-bold tracking-tight text-[#0D3D3D]">PARUAH</span>
-              <span className="text-[10px] font-bold tracking-[0.3em] text-[#C5A059] uppercase">
-                SYSTEMS
-              </span>
-            </div>
+        <div className="max-w-[1400px] mx-auto px-6 md:px-8 lg:px-12 h-[72px] md:h-[88px] flex justify-between items-center">
+          <NavLink onClick={() => setMobileMenuOpen(false)} to="/" className="">
+            <img src="/logo.png" alt="Logo" className="h-15  w-auto" />
           </NavLink>
 
-          <ul className="hidden md:flex items-center gap-10">
+          <ul className="hidden md:flex items-center gap-4 lg:gap-10">
             {NAV_LINKS.map(link => (
               <li key={link.id} className="relative">
                 <NavLink
                   to={link.id}
                   className={({ isActive }) =>
-                    `text-xs font-bold uppercase tracking-widest transition-all duration-300 relative py-2 ${
+                    `text-[11px] lg:text-xs  font-semibold lg:font-bold uppercase tracking-widest transition-all duration-300 relative py-2 ${
                       isActive ? 'text-[#C5A059]' : 'text-slate-500 hover:text-slate-900'
                     }`
                   }
