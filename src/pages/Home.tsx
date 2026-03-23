@@ -125,7 +125,7 @@ const Home = () => {
           <SectionTitle
             subtitle="Expertise"
             title="Modern software systems."
-            description="Our core areas of focus are designed to transform complex business challenges into seamless digital experiences."
+            description="We design and build custom softwares, including websites, web apps, mobile apps, and management systems, to support your business or organization"
           />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-4">
@@ -157,11 +157,12 @@ const Home = () => {
                   <Layout size={30} />
                 </div>
                 <h3 className="text-3xl font-semibold text-white mb-6">
-                  Custom Digital Architecture
+                  Custom Software Solutions
                 </h3>
                 <p className="text-lg text-white/70 leading-relaxed mb-8">
-                  From SaaS platforms to web and mobile applications, we build custom software
-                  designed to scale with your business.
+                  From simple websites to complex web and mobile applications, UI/UX design, and
+                  custom management systems, we design and develop software to fit your business
+                  needs.{' '}
                 </p>
               </div>
 
@@ -187,7 +188,7 @@ const Home = () => {
           <div className="flex justify-end -mt-10 mb-10 md:mt-0">
             <button
               onClick={() => navigate('/solutions')}
-              className="flex items-center gap-2 text-sm font-bold uppercase text-slate-400 hover:text-[#0D3D3D] transition-colors group"
+              className="cursor-pointer flex items-center gap-2 text-sm font-bold uppercase text-slate-400 hover:text-[#0D3D3D] transition-colors group"
             >
               View All Projects
               <ArrowUpRight
@@ -298,7 +299,7 @@ const Home = () => {
           <SectionTitle
             subtitle="The Journey"
             title="A standard for precision."
-            description="Our delivery model combines rapid prototyping with rigorous engineering to bring your vision to life."
+            description="A step-by-step process from planning to deployment."
             light
           />
 

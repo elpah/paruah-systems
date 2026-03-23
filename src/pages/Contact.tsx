@@ -140,14 +140,14 @@ const Contact = () => {
             <div className="space-y-6">
               <ContactInfoCard
                 href="mailto:info@paruah.com"
-                label="Direct Email"
+                label="Send an Email"
                 value="info@paruah.com"
                 icon={Mail}
               />
 
               <ContactInfoCard
                 href="https://wa.me/31627499165"
-                label="Office Line"
+                label="Chat with us"
                 value="+31 62 749 9165"
                 icon={SiWhatsapp}
               />
