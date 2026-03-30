@@ -1,9 +1,10 @@
 import CloudSection from '@/components/CloudSection';
 import SharedHero from '@/components/sharedUi/SharedHero';
-import { CUSTOM_PROJECTS } from '@/data/customProjects';
 import { CUSTOM_SERVICES } from '@/data/customServices.data';
-import { motion } from 'framer-motion';
-import { ArrowUpRight, CheckCircle2, ExternalLink } from 'lucide-react';
+// import { CUSTOM_PROJECTS } from '@/data/customProjects';
+// import { motion } from 'framer-motion';
+// import { ArrowUpRight, ExternalLink } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const CustomDev = () => {
@@ -51,7 +52,7 @@ const CustomDev = () => {
           })}
         </div>
       </div>
-      <section className="py-32 bg-[#F9FAFB]">
+      {/* <section className="py-32 bg-[#F9FAFB]">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 mb-">
           <div className=" mb-5">
             <div>
@@ -149,7 +150,7 @@ const CustomDev = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
       <CloudSection />
     </main>
   );

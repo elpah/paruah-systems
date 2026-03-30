@@ -1,19 +1,30 @@
 export const ALL_PROJECTS = [
   {
-    title: 'PARUAH School Management',
-    category: 'Education',
-    type: 'solutions',
-    desc: 'Enterprise School Management',
-    image:
-      'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop',
-  },
-  {
     title: 'DialysEase',
     category: 'Healthcare',
     type: 'solutions',
-    desc: 'Patient Management Foundation',
+    desc: 'Patient Management System',
     image:
-      'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop',
+      'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_fill/in-dev_oppies.png',
+  },
+
+  {
+    title: 'ICGC Living Word Temple',
+    category: 'Church',
+    type: 'custom',
+    desc: 'Church Community Website',
+    image:
+      'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_fill/icgclwt_k9kaxa.png',
+    link: 'http://icgclivingwordtemple.com/',
+  },
+  {
+    title: 'Zaur Autos',
+    category: 'Automobile',
+    type: 'custom',
+    desc: 'Car Listing Platform',
+    image:
+      'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_fill/zaurautos_qs1q38.png',
+    link: 'https://zaurautos.com/',
   },
   {
     title: 'Salon Commerce',
@@ -21,38 +32,41 @@ export const ALL_PROJECTS = [
     type: 'solutions',
     desc: 'Salon Booking & Inventory',
     image:
-      'https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=800&auto=format&fit=crop',
+      'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_fill/in-dev_oppies.png',
   },
   {
     title: 'ELPA Travel Consult',
     category: 'Travel Consult',
     type: 'custom',
-    desc: 'Orchestration Platform',
+    desc: 'Travel Consultancy Website',
     image:
-      'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop',
-  },
-  {
-    title: 'EL-Gate Properties',
-    category: 'Real Estate',
-    type: 'custom',
-    desc: 'High-Throughput Engine',
-    image:
-      'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=800&auto=format&fit=crop',
-  },
-  {
-    title: 'Zaur Autos',
-    category: 'Automobile',
-    type: 'custom',
-    desc: 'Predictive Grid Monitor',
-    image:
-      'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=800&auto=format&fit=crop',
+      'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_fill/elpatravel_m0dgi0.png',
+    link: 'https://elpatravelconsult.com/',
   },
   {
     title: 'Kissel Foods',
     category: 'Restaurant',
     type: 'custom',
-    desc: 'AI Route Optimization',
+    desc: 'Restaurant Website',
     image:
-      'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop',
+      'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_fill/kisselfoods_adhltl.png',
+    link: 'https://www.kisselfoods.com/',
+  },
+  {
+    title: 'Next-Gen School Management',
+    category: 'Education',
+    type: 'solutions',
+    desc: 'Enterprise School Management',
+    image:
+      'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_fill/in-dev_oppies.png',
+  },
+  {
+    title: 'Kofi Asiedu',
+    category: 'Portfolio',
+    type: 'custom',
+    desc: 'Counsellor Portfolio Website',
+    image:
+      'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_fill/bka_yx1kzv.png',
+    link: 'https://bkasiedu.com/',
   },
 ];

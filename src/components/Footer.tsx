@@ -16,6 +16,7 @@ const SOLUTIONS_LINKS = [
   { label: 'Salon Management', to: '/solutions' },
   { label: 'SaaS Development', to: '/custom' },
   { label: 'E-Commerce', to: '/custom' },
+  { label: 'E-Testing', to: '/custom' },
 ];
 
 const Footer = () => {

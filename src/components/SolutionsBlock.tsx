@@ -49,26 +49,14 @@ const GroupedFeatureList = ({ groups }: { groups: { title: string; items: string
     ))}
   </div>
 );
-const ProjectMockup = ({
-  icon: Icon,
-  outerClassName,
-  innerClassName,
-  gradientClassName,
-}: {
-  icon: LucideIcon;
-  outerClassName: string;
-  innerClassName: string;
-  gradientClassName: string;
-}) => (
+
+const ProjectMockup = ({ image, outerClassName }: { image: string; outerClassName: string }) => (
   <div
     className={`aspect-square rounded-[60px] relative overflow-hidden group border border-slate-100 ${outerClassName}`}
   >
-    <div className={`absolute inset-0 ${gradientClassName}`} />
     <div className="absolute inset-0 flex items-center justify-center p-12">
-      <div
-        className={`bg-white shadow-2xl border border-slate-100 flex items-center justify-center overflow-hidden ${innerClassName}`}
-      >
-        <Icon className="w-20 h-20 md:w-32 md:h-32 text-[#0D3D3D]/10 group-hover:scale-110 transition-transform duration-700" />
+      <div className="bg-white shadow-2xl border border-slate-100 flex items-center justify-center overflow-hidden w-full aspect-[16/10] rounded-3xl">
+        <img src={image} alt="Product Image" className="w-full h-full object-cover" />
       </div>
     </div>
   </div>
@@ -100,12 +88,7 @@ const SolutionsBlock = ({ project }: { project: SolutionProject }) => {
   );
 
   const visualContent = (
-    <ProjectMockup
-      icon={project.mockupIcon}
-      outerClassName={project.mockupOuterClassName}
-      innerClassName={project.mockupInnerClassName}
-      gradientClassName={project.mockupGradientClassName}
-    />
+    <ProjectMockup image={project.image} outerClassName={project.mockupOuterClassName} />
   );
 
   return (

@@ -1,12 +1,4 @@
-import {
-  School,
-  Monitor,
-  ShieldCheck,
-  Users,
-  ShoppingBag,
-  Smartphone,
-  LucideIcon,
-} from 'lucide-react';
+import { School, Users, ShoppingBag, LucideIcon } from 'lucide-react';
 
 export type SolutionProject = {
   id: string;
@@ -23,10 +15,8 @@ export type SolutionProject = {
     title: string;
     items: string[];
   }[];
-  mockupIcon: LucideIcon;
+  image: string;
   mockupOuterClassName: string;
-  mockupInnerClassName: string;
-  mockupGradientClassName: string;
   reverse?: boolean;
 };
 
@@ -49,10 +39,9 @@ export const SOLUTION_PROJECTS: SolutionProject[] = [
       'Interactive Dashboards',
       'Predictive Reporting',
     ],
-    mockupIcon: Monitor,
+    image:
+      'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_fill/in-dev_oppies.png',
     mockupOuterClassName: 'bg-[#F9FAFB]',
-    mockupInnerClassName: 'w-full aspect-[16/10] rounded-3xl',
-    mockupGradientClassName: 'bg-gradient-to-br from-[#0D3D3D]/5 to-transparent',
     reverse: true,
   },
   {
@@ -73,10 +62,9 @@ export const SOLUTION_PROJECTS: SolutionProject[] = [
       'Telehealth Bridge',
       'Patient Analytics',
     ],
-    mockupIcon: ShieldCheck,
+    image:
+      'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_fill/in-dev_oppies.png',
     mockupOuterClassName: 'bg-[#F9FAFB]',
-    mockupInnerClassName: 'w-full aspect-square rounded-[40px]',
-    mockupGradientClassName: 'bg-gradient-to-tr from-[#0D3D3D]/5 to-transparent',
   },
   {
     id: 'salon-commerce',
@@ -99,10 +87,9 @@ export const SOLUTION_PROJECTS: SolutionProject[] = [
         items: ['Product Catalog', 'Secure Checkout', 'Inventory Engine'],
       },
     ],
-    mockupIcon: Smartphone,
+    image:
+      'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_fill/in-dev_oppies.png',
     mockupOuterClassName: 'bg-[#F8FAFA]',
-    mockupInnerClassName: 'w-full aspect-[9/16] max-w-[280px] rounded-[40px]',
-    mockupGradientClassName: 'bg-gradient-to-tr from-[#C5A059]/5 to-transparent',
     reverse: true,
   },
 ];

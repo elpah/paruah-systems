@@ -44,9 +44,8 @@ const CloudSection = () => {
               <span className="italic">& Future Proof.</span>
             </h3>
             <p className="text-lg text-white/50 leading-relaxed">
-              Our code isn't just written; it's engineered for scale. We use modern architectural
-              patterns like microservices, serverless computing, and edge delivery to ensure your
-              platform performs at its peak, regardless of the load.
+              We use modern architectural patterns like microservices, serverless computing, and
+              edge delivery to ensure your platform performs at its peak, regardless of the load.
             </p>
           </motion.div>
           <motion.div

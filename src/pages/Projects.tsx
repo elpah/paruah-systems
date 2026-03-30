@@ -2,7 +2,6 @@ import SharedHero from '@/components/sharedUi/SharedHero';
 import { ALL_PROJECTS } from '@/data/allProjects.data';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
-import { c } from 'node_modules/framer-motion/dist/types.d-6pKw1mTI';
 import { useState } from 'react';
 
 const Projects = () => {
@@ -57,8 +56,8 @@ const Projects = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0D3D3D]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-10 right-10 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                   <a
-                    href="#"
-                    onClick={e => e.preventDefault()}
+                    href={p.link}
+                    target="_blank"
                     className="w-16 h-16 bg-white text-[#0D3D3D] rounded-full flex items-center justify-center shadow-2xl"
                   >
                     <ExternalLink size={24} />
