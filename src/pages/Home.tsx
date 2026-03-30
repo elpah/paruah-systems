@@ -208,7 +208,7 @@ const Home = () => {
                 transition={{ delay: shouldReduceMotion ? 0 : i * 0.1, duration: 0.8 }}
                 className="group"
               >
-                <div className="relative aspect-[4/5.5] overflow-hidden rounded-[40px] bg-slate-100 mb-8 shadow-md">
+                <div className="relative aspect-[4/5.5] overflow-hidden rounded-[30px] bg-slate-100 mb-8 shadow-md">
                   <img
                     src={work.image}
                     alt={work.title}

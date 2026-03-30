@@ -47,7 +47,7 @@ const Projects = () => {
               key={p.title}
               className="group"
             >
-              <div className="bg-slate-50 rounded-[48px] overflow-hidden mb-8 relative aspect-[16/10]">
+              <div className="bg-slate-50 rounded-[15px] lg:rounded-[25px] overflow-hidden mb-8 relative aspect-[16/10]">
                 <img
                   src={p.image}
                   alt={p.title}
