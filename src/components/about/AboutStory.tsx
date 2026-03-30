@@ -38,7 +38,7 @@ const AboutStory = () => {
             </p>
             <div className="pt-8 border-t border-slate-100">
               <blockquote className="text-2xl font-semibold text-[#0D3D3D] leading-snug italic">
-                "Software should be both reliable and well designed. That should be the standard."
+                "Software should be both reliable and well designed. That is our standard."
               </blockquote>
               <p className="mt-4 text-[11px] font-bold uppercase tracking-[0.2em] text-[#C5A059]">
                 — El Pachris OBENG!, Founder
