@@ -1,5 +1,5 @@
-import { ABOUT_TEAM } from '@/data/aboutTeam.data';
-import { motion } from 'framer-motion';
+// import { ABOUT_TEAM } from '@/data/aboutTeam.data';
+// import { motion } from 'framer-motion';
 
 const AboutTeamSection = () => {
   return (
@@ -22,7 +22,7 @@ const AboutTeamSection = () => {
             systems that are reliable, scalable, and built to last.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {ABOUT_TEAM.map((member, i) => (
             <motion.div
               key={member.name}
@@ -58,7 +58,7 @@ const AboutTeamSection = () => {
               </p>
             </motion.div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );
