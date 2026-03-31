@@ -7,7 +7,7 @@ const SOCIAL_LINKS = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/company/paruah', Icon: Linkedin },
   // { label: 'X', href: 'https://x.com/paruah', Icon: SiX },
   { label: 'Instagram', href: 'https://instagram.com/paruah_systems', Icon: Instagram },
-  { label: 'Facebook', href: 'https://facebook.com', Icon: Facebook },
+  { label: 'Facebook', href: 'https://www.facebook.com/paruah.systems', Icon: Facebook },
 ];
 
 const SOLUTIONS_LINKS = [
