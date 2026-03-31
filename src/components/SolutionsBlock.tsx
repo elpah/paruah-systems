@@ -81,9 +81,9 @@ const SolutionsBlock = ({ project }: { project: SolutionProject }) => {
       {project.features && <FeatureList items={project.features} />}
       {project.groupedFeatures && <GroupedFeatureList groups={project.groupedFeatures} />}
 
-      <button className="px-10 py-4 bg-[#0D3D3D] text-white text-xs font-bold uppercase tracking-widest rounded-full shadow-xl shadow-teal-900/10 hover:scale-105 transition-all">
+      {/* <button className="px-10 py-4 bg-[#0D3D3D] text-white text-xs font-bold uppercase tracking-widest rounded-full shadow-xl shadow-teal-900/10 hover:scale-105 transition-all">
         Request Platform Demo
-      </button>
+      </button> */}
     </div>
   );
 

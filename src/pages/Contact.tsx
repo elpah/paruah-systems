@@ -218,9 +218,10 @@ const Contact = () => {
                         className={`${inputClassName} appearance-none`}
                       >
                         <option>Management System</option>
-                        <option>SaaS Platform</option>
-                        <option>Mobile Engineering</option>
-                        <option>Other Transformation</option>
+                        <option>Web Development</option>
+                        <option>Mobile Application</option>
+                        {/* <option>SaaS Platform</option> */}
+                        <option>Other</option>
                       </select>
                     </FormField>
                   </div>

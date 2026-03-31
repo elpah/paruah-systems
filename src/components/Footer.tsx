@@ -14,9 +14,8 @@ const SOLUTIONS_LINKS = [
   { label: 'Patient Management', to: '/solutions' },
   { label: 'School Management', to: '/solutions' },
   { label: 'Salon Management', to: '/solutions' },
-  { label: 'SaaS Development', to: '/custom' },
   { label: 'Web Development', to: '/custom' },
-  { label: 'E-Commerce', to: '/custom' },
+  { label: 'Mobile Development', to: '/custom' },
 ];
 
 const Footer = () => {
