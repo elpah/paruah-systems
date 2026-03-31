@@ -1,11 +1,11 @@
 import { NAV_LINKS } from '@/data/navlinks.data';
 import { Mail, Facebook, Instagram, Linkedin } from 'lucide-react';
-import { SiX, SiWhatsapp } from 'react-icons/si';
+import { SiWhatsapp } from 'react-icons/si';
 import { Link } from 'react-router-dom';
 
 const SOCIAL_LINKS = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/company/paruah', Icon: Linkedin },
-  { label: 'X', href: 'https://x.com/paruah', Icon: SiX },
+  // { label: 'X', href: 'https://x.com/paruah', Icon: SiX },
   { label: 'Instagram', href: 'https://instagram.com/paruah_systems', Icon: Instagram },
   { label: 'Facebook', href: 'https://facebook.com', Icon: Facebook },
 ];
@@ -16,7 +16,6 @@ const SOLUTIONS_LINKS = [
   { label: 'Salon Management', to: '/solutions' },
   { label: 'SaaS Development', to: '/custom' },
   { label: 'E-Commerce', to: '/custom' },
-  { label: 'E-Testing', to: '/custom' },
 ];
 
 const Footer = () => {
