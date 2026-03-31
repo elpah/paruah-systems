@@ -218,12 +218,14 @@ const Home = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0D3D3D]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="absolute bottom-8 left-8 right-8 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                    <button
+                    <a
+                      href={work.link}
+                      target="_blank"
                       aria-label="Open project in new tab"
                       className="cursor-pointer w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#0D3D3D] shadow-xl"
                     >
                       <ExternalLink aria-hidden="true" size={20} />
-                    </button>
+                    </a>
                   </div>
                 </div>
 
