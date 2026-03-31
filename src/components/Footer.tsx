@@ -15,6 +15,7 @@ const SOLUTIONS_LINKS = [
   { label: 'School Management', to: '/solutions' },
   { label: 'Salon Management', to: '/solutions' },
   { label: 'SaaS Development', to: '/custom' },
+  { label: 'Web Development', to: '/custom' },
   { label: 'E-Commerce', to: '/custom' },
 ];
 
