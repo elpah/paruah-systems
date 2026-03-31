@@ -32,7 +32,7 @@ const Projects = () => {
             </button>
           ))}
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-20">
           {filteredProjects.map(p => (
             <motion.div
               layout
@@ -47,29 +47,34 @@ const Projects = () => {
               key={p.title}
               className="group"
             >
-              <div className="bg-slate-50 rounded-[15px] lg:rounded-[25px] overflow-hidden mb-8 relative aspect-[16/10]">
+              <div className="bg-slate-50 rounded-[15px] lg:rounded-[25px] overflow-hidden mb-6 relative aspect-[16/10]">
                 <img
                   src={p.image}
                   alt={p.title}
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0D3D3D]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute bottom-10 right-10 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                  <a
-                    href={p.link}
-                    target="_blank"
-                    className="w-16 h-16 bg-white text-[#0D3D3D] rounded-full flex items-center justify-center shadow-2xl"
-                  >
-                    <ExternalLink size={24} />
-                  </a>
-                </div>
+
+                {p.link && (
+                  <div className="absolute bottom-10 right-10 translate-y-4 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-500">
+                    <a
+                      href={p.link}
+                      target="_blank"
+                      className="w-16 h-16 bg-white text-[#0D3D3D] rounded-full flex items-center justify-center shadow-2xl"
+                    >
+                      <ExternalLink size={24} />
+                    </a>
+                  </div>
+                )}
               </div>
-              <div className="px-6">
-                <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#C5A059] mb-3 block">
+              <div className="">
+                <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#C5A059] mb-1 md:mb-2 block">
                   {p.category}
                 </span>
-                <h3 className="text-3xl font-bold text-slate-900 mb-3">{p.title}</h3>
-                <p className="text-slate-500 text-lg font-medium">{p.desc}</p>
+                <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-1 md:mb-2">
+                  {p.title}
+                </h3>
+                <p className="text-slate-500 text-md md:text-lg font-medium">{p.desc}</p>
               </div>
             </motion.div>
           ))}
