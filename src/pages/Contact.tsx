@@ -104,7 +104,9 @@ const Contact = () => {
 
       await emailjs.send(serviceId, adminTemplateId, formState, { publicKey });
 
-      await emailjs.send(serviceId, autoReplyTemplateId, formState, { publicKey });
+      await emailjs.send(serviceId, autoReplyTemplateId, formState, {
+        publicKey,
+      });
 
       setFormState(INITIAL_FORM_STATE);
       setSubmitted(true);
@@ -144,11 +146,10 @@ const Contact = () => {
                 value="info@paruah.com"
                 icon={Mail}
               />
-
               <ContactInfoCard
-                href="https://wa.me/31627499165"
+                href="https://wa.me/491709069846"
                 label="Chat with us"
-                value="+31 62 749 9165"
+                value="+49 170 9069 846"
                 icon={SiWhatsapp}
               />
             </div>

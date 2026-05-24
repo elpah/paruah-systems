@@ -4,10 +4,22 @@ import { SiWhatsapp } from 'react-icons/si';
 import { Link } from 'react-router-dom';
 
 const SOCIAL_LINKS = [
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/paruah', Icon: Linkedin },
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/paruah',
+    Icon: Linkedin,
+  },
   // { label: 'X', href: 'https://x.com/paruah', Icon: SiX },
-  { label: 'Instagram', href: 'https://instagram.com/paruah_systems', Icon: Instagram },
-  { label: 'Facebook', href: 'https://www.facebook.com/paruah.systems', Icon: Facebook },
+  {
+    label: 'Instagram',
+    href: 'https://instagram.com/paruah_systems',
+    Icon: Instagram,
+  },
+  {
+    label: 'Facebook',
+    href: 'https://www.facebook.com/paruah.systems',
+    Icon: Facebook,
+  },
 ];
 
 const SOLUTIONS_LINKS = [
@@ -127,10 +139,10 @@ const Footer = () => {
                     <div>
                       <p className="text-[10px] font-bold uppercase text-white/30 mb-1">Support</p>
                       <a
-                        href="https://wa.me/31627499165"
+                        href="https://wa.me/491709069846"
                         className="text-sm   text-slate-300 hover:text-[#C5A059] transition-colors"
                       >
-                        +31 62 749 9165
+                        +49 170 9069 846
                       </a>
                     </div>
                   </li>
