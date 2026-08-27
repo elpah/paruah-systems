@@ -53,7 +53,7 @@ export const ALL_PROJECTS = [
     link: 'http://icgclivingwordtemple.com/',
   },
   {
-    title: 'Next-Gen School Management',
+    title: 'School Management App',
     category: 'Education',
     type: 'solutions',
     desc: 'Enterprise School Management',

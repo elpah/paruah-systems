@@ -26,8 +26,8 @@ export const SOLUTION_PROJECTS: SolutionProject[] = [
     badgeLabel: 'School Management',
     badgeIcon: School,
     title: {
-      main: 'Next-Gen School',
-      accent: 'Management.',
+      main: 'School Management',
+      accent: 'App.',
     },
     description:
       'Transform your institution with a unified platform that connects administrators, teachers, parents, and students in one intelligent ecosystem.',
