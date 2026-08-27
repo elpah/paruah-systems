@@ -5,17 +5,7 @@ export const ALL_PROJECTS = [
     type: 'solutions',
     desc: 'Patient Management System',
     image:
-      'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_fill/in-dev_oppies.png',
-  },
-
-  {
-    title: 'ICGC Living Word Temple',
-    category: 'Church',
-    type: 'custom',
-    desc: 'Church Community Website',
-    image:
-      'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_fill/icgclwt_k9kaxa.png',
-    link: 'http://icgclivingwordtemple.com/',
+      'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_scale/v1787798963/website-mockup-style-1_c9yvbn.webp',
   },
   {
     title: 'Zaur Autos',
@@ -35,6 +25,15 @@ export const ALL_PROJECTS = [
       'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_fill/in-dev_oppies.png',
   },
   {
+    title: 'TDGs Logistics',
+    category: 'Logistics',
+    type: 'custom',
+    desc: 'Logistics Company Website',
+    image:
+      'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_fill/v1787798187/tdgs_logistics_sgqceu.webp',
+    link: 'https://tdgslogistics.com/',
+  },
+  {
     title: 'ELPA Travel Consult',
     category: 'Travel Consult',
     type: 'custom',
@@ -43,14 +42,15 @@ export const ALL_PROJECTS = [
       'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_fill/elpatravel_m0dgi0.png',
     link: 'https://elpatravelconsult.com/',
   },
+
   {
-    title: 'Kissel Foods',
-    category: 'Restaurant',
+    title: 'ICGC Living Word Temple',
+    category: 'Church',
     type: 'custom',
-    desc: 'Restaurant Website',
+    desc: 'Church Community Website',
     image:
-      'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_fill/kisselfoods_adhltl.png',
-    link: 'https://www.kisselfoods.com/',
+      'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_fill/icgclwt_k9kaxa.png',
+    link: 'http://icgclivingwordtemple.com/',
   },
   {
     title: 'Next-Gen School Management',
@@ -60,13 +60,13 @@ export const ALL_PROJECTS = [
     image:
       'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_fill/in-dev_oppies.png',
   },
-  {
-    title: 'Kofi Asiedu',
-    category: 'Portfolio',
-    type: 'custom',
-    desc: 'Counsellor Portfolio Website',
-    image:
-      'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_fill/bka_yx1kzv.png',
-    link: 'https://bkasiedu.com/',
-  },
+  // {
+  //   title: 'Kofi Asiedu',
+  //   category: 'Portfolio',
+  //   type: 'custom',
+  //   desc: 'Counsellor Portfolio Website',
+  //   image:
+  //     'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_fill/bka_yx1kzv.png',
+  //   link: 'https://bkasiedu.com/',
+  // },
 ];
