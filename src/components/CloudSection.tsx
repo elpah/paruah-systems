@@ -1,5 +1,4 @@
 import { CLOUD_PILLARS } from '@/data/cloudPillars.data';
-import { motion } from 'framer-motion';
 
 const CloudSection = () => {
   return (
@@ -15,22 +14,7 @@ const CloudSection = () => {
       <div className="absolute bottom-0 left-0 w-[520px] h-[520px] bg-gradient-to-tr from-[#0A2828]/80 to-transparent rounded-full blur-3xl pointer-events-none" />
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 30,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-            }}
-            transition={{
-              duration: 0.8,
-            }}
-          >
+          <div>
             <div className="inline-block mb-5">
               <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#C5A059]">
                 INFRASTRUCTURE
@@ -47,26 +31,10 @@ const CloudSection = () => {
               We use modern architectural patterns like microservices, serverless computing, and
               edge delivery to ensure your platform performs at its peak, regardless of the load.
             </p>
-          </motion.div>
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 30,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-            }}
-            transition={{
-              duration: 0.8,
-              delay: 0.2,
-            }}
-          >
+          </div>
+          <div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {CLOUD_PILLARS.map((item, i) => (
+              {CLOUD_PILLARS.map(item => (
                 <div
                   key={item}
                   className="p-8 border border-white/10 rounded-3xl bg-white/5 font-bold text-center hover:border-[#C5A059]/40 hover:bg-white/8 transition-all duration-300"
@@ -75,7 +43,7 @@ const CloudSection = () => {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

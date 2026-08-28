@@ -52,7 +52,7 @@ const GroupedFeatureList = ({ groups }: { groups: { title: string; items: string
 
 const ProjectMockup = ({ image, outerClassName }: { image: string; outerClassName: string }) => (
   <div
-    className={`aspect-square rounded-[60px] relative overflow-hidden group border border-slate-100 ${outerClassName}`}
+    className={`aspect-square rounded-3xl relative overflow-hidden group border border-slate-100 ${outerClassName}`}
   >
     <div className="absolute inset-0 flex items-center justify-center p-12">
       <div className="bg-white shadow-2xl border border-slate-100 flex items-center justify-center overflow-hidden w-full aspect-[16/10] rounded-3xl">

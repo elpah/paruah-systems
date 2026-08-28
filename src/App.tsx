@@ -12,6 +12,8 @@ const Contact = lazy(() => import('./pages/Contact'));
 const Solutions = lazy(() => import('./pages/Solutions'));
 const CustomDev = lazy(() => import('./pages/CustomDev'));
 const Projects = lazy(() => import('./pages/Projects'));
+const Privacy = lazy(() => import('./pages/Privacy'));
+const Terms = lazy(() => import('./pages/Terms'));
 
 const theme: Theme = 'light';
 
@@ -27,12 +29,8 @@ function App() {
   }
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
   }, [pathname]);
-  setTheme(theme);
   setTheme(theme);
 
   return (
@@ -45,9 +43,11 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/custom" element={<CustomDev />} />
-            <Route path="*" element={<NotFound />} />
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </div>

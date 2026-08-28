@@ -20,7 +20,7 @@ const CustomDev = () => {
             return (
               <div
                 key={idx}
-                className="bg-[#F9FAFB] p-6  md:pt-12 md:pb-12  rounded-[20px] hover:bg-white hover:shadow-xl hover:shadow-slate-200/50 transition-all border border-slate-100 group"
+                className="bg-[#F9FAFB] p-6  md:pt-12 md:pb-12  rounded-2xl hover:bg-white hover:shadow-xl hover:shadow-slate-200/50 transition-all border border-slate-100 group"
               >
                 <div
                   className="w-14 h-14 rounded-2xl flex items-center justify-center text-white mb-10 group-hover:scale-110 transition-transform"

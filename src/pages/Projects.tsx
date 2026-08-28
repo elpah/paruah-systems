@@ -1,6 +1,5 @@
 import SharedHero from '@/components/sharedUi/SharedHero';
 import { ALL_PROJECTS } from '@/data/allProjects.data';
-import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import { useState } from 'react';
 
@@ -32,51 +31,42 @@ const Projects = () => {
             </button>
           ))}
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-16 md:gap-y-20">
           {filteredProjects.map(p => (
-            <motion.div
-              layout
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              key={p.title}
-              className="group"
-            >
-              <div className="bg-slate-50 rounded-[15px] lg:rounded-[25px] overflow-hidden mb-6 relative aspect-[16/10]">
+            <div key={p.title} className="group">
+              <div className="bg-slate-50 rounded-2xl overflow-hidden mb-5 relative aspect-[16/10] shadow-sm transition-shadow duration-500 group-hover:shadow-md">
                 <img
                   src={p.image}
                   alt={p.title}
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.03]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0D3D3D]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0D3D3D]/25 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 {p.link && (
-                  <div className="absolute bottom-10 right-10 translate-y-4 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-500">
+                  <div className="absolute bottom-6 right-6 translate-y-2 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-500">
                     <a
                       href={p.link}
                       target="_blank"
-                      className="w-16 h-16 bg-white text-[#0D3D3D] rounded-full flex items-center justify-center shadow-2xl"
+                      rel="noreferrer"
+                      className="w-11 h-11 bg-white text-[#0D3D3D] rounded-full flex items-center justify-center shadow-md"
                     >
-                      <ExternalLink size={24} />
+                      <ExternalLink size={18} />
                     </a>
                   </div>
                 )}
               </div>
-              <div className="">
-                <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#C5A059] mb-1 md:mb-2 block">
+              <div className="px-0.5">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#C5A059] mb-2">
                   {p.category}
-                </span>
-                <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-1 md:mb-2">
+                </p>
+                <h3 className="text-xl md:text-2xl font-semibold text-[#0D3D3D] tracking-tight mb-1.5">
                   {p.title}
                 </h3>
-                <p className="text-slate-500 text-md md:text-lg font-medium">{p.desc}</p>
+                <p className="text-sm md:text-[15px] text-slate-500 leading-relaxed font-normal">
+                  {p.desc}
+                </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

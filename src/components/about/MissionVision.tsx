@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion';
-
 const MissionVision = () => {
   return (
     <section className="w-full bg-[#0D3D3D] py-24 lg:py-32 text-white overflow-hidden relative">
@@ -15,23 +13,7 @@ const MissionVision = () => {
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 30,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-            }}
-            transition={{
-              duration: 0.8,
-            }}
-            className="space-y-8 relative"
-          >
+          <div className="space-y-8 relative">
             <div className="relative">
               <div className="inline-block">
                 <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#C5A059]">
@@ -49,27 +31,9 @@ const MissionVision = () => {
                 strong technical standards.
               </p>
             </div>
-          </motion.div>
+          </div>
 
-          {/* Mission */}
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 30,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-            }}
-            transition={{
-              duration: 0.8,
-              delay: 0.2,
-            }}
-            className="space-y-8 lg:pt-12 relative"
-          >
+          <div className="space-y-8 lg:pt-12 relative">
             <div className="relative">
               <div className="inline-block">
                 <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-white/50">
@@ -81,7 +45,7 @@ const MissionVision = () => {
                 organizations.
               </p>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

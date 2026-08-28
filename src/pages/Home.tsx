@@ -14,7 +14,7 @@ import {
   Database,
   Globe,
 } from 'lucide-react';
-import { useMemo, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const APPROACH_ITEMS = [
@@ -36,65 +36,140 @@ const APPROACH_ITEMS = [
   },
 ];
 
+const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
+
+const IN_VIEW = {
+  once: true as const,
+  amount: 0.25,
+};
+
+const CARD_VIEWPORT = {
+  once: true as const,
+  amount: 0.2,
+};
+
 const Home = () => {
   const navigate = useNavigate();
-  const containerRef = useRef<HTMLDivElement | null>(null);
+  const heroRef = useRef<HTMLElement | null>(null);
   const shouldReduceMotion = useReducedMotion();
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia('(min-width: 768px)');
+    const update = () => setIsDesktop(media.matches);
+    update();
+    media.addEventListener('change', update);
+    return () => media.removeEventListener('change', update);
+  }, []);
+
+  const reduceMotion = shouldReduceMotion === true;
+  const enableParallax = isDesktop && !reduceMotion;
 
   const { scrollYProgress } = useScroll({
-    target: containerRef,
+    target: heroRef,
     offset: ['start start', 'end start'],
   });
 
-  const heroY = useTransform(scrollYProgress, [0, 0.5], [0, shouldReduceMotion ? 0 : 100]);
+  const heroY = useTransform(scrollYProgress, [0, 1], [0, 36]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.85], [1, 0.4]);
 
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.3], [1, shouldReduceMotion ? 1 : 0]);
-
-  const heroIntroMotion = useMemo(
-    () =>
-      shouldReduceMotion
-        ? {}
-        : {
-            initial: { opacity: 0, y: 30 },
-            animate: { opacity: 1, y: 0 },
-            transition: {
-              duration: 0.8,
-              ease: [0.22, 1, 0.36, 1],
-            },
+  const fadeUp = (delay = 0) =>
+    reduceMotion
+      ? {
+          initial: false as const,
+          whileInView: { opacity: 1, y: 0 },
+          viewport: IN_VIEW,
+          transition: { duration: 0 },
+        }
+      : {
+          initial: { opacity: 0, y: 14 },
+          whileInView: { opacity: 1, y: 0 },
+          viewport: IN_VIEW,
+          transition: {
+            duration: 1.05,
+            delay,
+            ease: EASE,
           },
-    [shouldReduceMotion]
-  );
+        };
+
+  const approachItem = reduceMotion
+    ? {
+        hidden: { opacity: 1, y: 0 },
+        show: { opacity: 1, y: 0 },
+      }
+    : {
+        hidden: { opacity: 0, y: 14 },
+        show: {
+          opacity: 1,
+          y: 0,
+          transition: { duration: 1.05, ease: EASE },
+        },
+      };
+
+  const heroItem = reduceMotion
+    ? {
+        hidden: { opacity: 1, y: 0 },
+        show: { opacity: 1, y: 0 },
+      }
+    : {
+        hidden: { opacity: 0, y: 18 },
+        show: {
+          opacity: 1,
+          y: 0,
+          transition: { duration: 1.15, ease: EASE },
+        },
+      };
 
   return (
-    <main ref={containerRef} className="w-full">
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+    <main className="w-full overflow-x-hidden">
+      <section
+        ref={heroRef}
+        className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-white"
+      >
         <motion.div
-          style={
-            shouldReduceMotion
-              ? undefined
-              : {
-                  y: heroY,
-                  opacity: heroOpacity,
-                }
-          }
-          className="relative z-10 text-center px-6"
+          style={enableParallax ? { y: heroY, opacity: heroOpacity } : undefined}
+          className={`relative z-10 text-center px-6 ${enableParallax ? 'will-change-transform' : ''}`}
         >
-          <motion.div {...heroIntroMotion}>
-            <span className="inline-block text-[11px] min-[500px]:text-xs font-bold uppercase tracking-[0.4em] text-[#C5A059] mb-4">
+          <motion.div
+            initial={reduceMotion ? 'show' : 'hidden'}
+            animate="show"
+            variants={{
+              hidden: {},
+              show: {
+                transition: {
+                  staggerChildren: reduceMotion ? 0 : 0.16,
+                  delayChildren: reduceMotion ? 0 : 0.12,
+                },
+              },
+            }}
+          >
+            <motion.span
+              variants={heroItem}
+              className="inline-block text-[11px] min-[500px]:text-xs font-bold uppercase tracking-[0.4em] text-[#C5A059] mb-4"
+            >
               Intelligent Software
-            </span>
+            </motion.span>
 
-            <h1 className="text-4xl min-[500px]:text-6xl md:text-[100px] lg:text-[120px] font-bold tracking-tight text-[#0D3D3D] leading-[0.9] mb-4 md:mb-12">
+            <motion.h1
+              variants={heroItem}
+              className="text-4xl min-[500px]:text-6xl md:text-[100px] lg:text-[120px] font-bold tracking-tight text-[#0D3D3D] leading-[0.9] mb-4 md:mb-12"
+            >
               AI-Driven <br />
               <span className="italic font-light text-slate-400">Digital Systems.</span>
-            </h1>
+            </motion.h1>
 
-            <p className="text-md min-[500px]:text-lg md:text-2xl text-slate-500 max-w-2xl mx-auto leading-relaxed mb-12 font-medium">
+            <motion.p
+              variants={heroItem}
+              className="text-md min-[500px]:text-lg md:text-2xl text-slate-500 max-w-2xl mx-auto leading-relaxed mb-12 font-medium"
+            >
               We design and build intelligent management platforms and custom digital products for
               individuals and organizations
-            </p>
+            </motion.p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <motion.div
+              variants={heroItem}
+              className="flex flex-col sm:flex-row items-center justify-center gap-6"
+            >
               <button
                 onClick={() => navigate('/solutions')}
                 className="cursor-pointer group relative px-10 py-5 bg-[#0D3D3D] text-white text-xs md:text-md font-bold uppercase tracking-widest rounded-full overflow-hidden transition-transform duration-300 hover:scale-105"
@@ -115,7 +190,7 @@ const Home = () => {
               >
                 Start a Project
               </button>
-            </div>
+            </motion.div>
           </motion.div>
         </motion.div>
       </section>
@@ -128,51 +203,81 @@ const Home = () => {
             description="We design and build custom softwares, including websites, web apps, mobile apps, and management systems, to support your business or organization"
           />
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-4">
-            <div className="bg-white p-6 pt-10 pb-10 md:p-16 rounded-[40px] shadow-sm border border-slate-100 flex flex-col justify-between group transition-transform duration-300 hover:-translate-y-2">
-              <div>
-                <div className="w-16 h-16 bg-[#0D3D3D] rounded-2xl flex items-center justify-center text-white mb-10 transition-transform duration-500 group-hover:scale-110">
-                  <Layers size={30} />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-6 py-1">
+            <motion.div
+              initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={CARD_VIEWPORT}
+              transition={{ duration: reduceMotion ? 0 : 1.2, ease: EASE }}
+              className="h-full"
+            >
+              <div className="group h-full origin-center p-6 pt-10 pb-10 md:p-16 rounded-3xl shadow-sm border border-slate-100 bg-white flex flex-col justify-between motion-safe:transition-transform motion-safe:duration-500 motion-safe:ease-out motion-safe:hover:scale-[1.02]">
+                <div>
+                  <div className="w-16 h-16 bg-[#0D3D3D] rounded-2xl flex items-center justify-center text-white mb-10">
+                    <Layers size={30} />
+                  </div>
+                  <h3 className="text-3xl font-semibold text-slate-900 mb-6">
+                    Intelligent Management Systems
+                  </h3>
+                  <p className="text-md md:text-lg text-slate-600 leading-relaxed mb-8">
+                    Management platforms for schools, hospitals, and salons that simplify
+                    operations, records, appointments and day-to-day management.
+                  </p>
                 </div>
-                <h3 className="text-3xl font-semibold text-slate-900 mb-6">
-                  Intelligent Management Systems
-                </h3>
-                <p className="text-md md:text-lg text-slate-600 leading-relaxed mb-8">
-                  Management platforms for schools, hospitals, and salons that simplify operations,
-                  records, appointments and day-to-day management.
-                </p>
+
+                <button
+                  onClick={() => navigate('/solutions')}
+                  className="cursor-pointer flex items-center gap-3 text-sm font-bold uppercase tracking-[0.2em] text-[#C5A059]"
+                >
+                  Learn More{' '}
+                  <ArrowRight
+                    aria-hidden="true"
+                    size={18}
+                    className="transition-transform duration-300 group-hover:translate-x-1"
+                  />
+                </button>
               </div>
+            </motion.div>
 
-              <button
-                onClick={() => navigate('/solutions')}
-                className="cursor-pointer flex items-center gap-3 text-sm font-bold uppercase tracking-[0.2em] text-[#C5A059] transition-all duration-300 group-hover:gap-5"
-              >
-                Learn More <ArrowRight aria-hidden="true" size={18} />
-              </button>
-            </div>
-
-            <div className="bg-[#0D3D3D] p-6 pt-10 pb-10 md:p-16 rounded-[40px] shadow-xl shadow-teal-900/10 flex flex-col justify-between group transition-transform duration-300 hover:-translate-y-2">
-              <div>
-                <div className="w-16 h-16 bg-[#C5A059] rounded-2xl flex items-center justify-center text-white mb-10 transition-transform duration-500 group-hover:scale-110">
-                  <Layout size={30} />
+            <motion.div
+              initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={CARD_VIEWPORT}
+              transition={{
+                duration: reduceMotion ? 0 : 1.2,
+                delay: reduceMotion ? 0 : 0.12,
+                ease: EASE,
+              }}
+              className="h-full"
+            >
+              <div className="group h-full origin-center p-6 pt-10 pb-10 md:p-16 rounded-3xl shadow-xl shadow-teal-900/10 bg-[#0D3D3D] flex flex-col justify-between motion-safe:transition-transform motion-safe:duration-500 motion-safe:ease-out motion-safe:hover:scale-[1.02]">
+                <div>
+                  <div className="w-16 h-16 bg-[#C5A059] rounded-2xl flex items-center justify-center text-white mb-10">
+                    <Layout size={30} />
+                  </div>
+                  <h3 className="text-3xl font-semibold text-white mb-6">
+                    Custom Software Solutions
+                  </h3>
+                  <p className="text-lg text-white/70 leading-relaxed mb-8">
+                    From simple websites to complex web and mobile applications, UI/UX design, and
+                    custom management systems, we design and develop software to fit your business
+                    needs.{' '}
+                  </p>
                 </div>
-                <h3 className="text-3xl font-semibold text-white mb-6">
-                  Custom Software Solutions
-                </h3>
-                <p className="text-lg text-white/70 leading-relaxed mb-8">
-                  From simple websites to complex web and mobile applications, UI/UX design, and
-                  custom management systems, we design and develop software to fit your business
-                  needs.{' '}
-                </p>
-              </div>
 
-              <button
-                onClick={() => navigate('/custom')}
-                className="cursor-pointer flex items-center gap-3 text-sm font-bold uppercase tracking-[0.2em] text-[#C5A059] transition-all duration-300 group-hover:gap-5"
-              >
-                Explore Services <ArrowRight aria-hidden="true" size={18} />
-              </button>
-            </div>
+                <button
+                  onClick={() => navigate('/custom')}
+                  className="cursor-pointer flex items-center gap-3 text-sm font-bold uppercase tracking-[0.2em] text-[#C5A059]"
+                >
+                  Explore Services{' '}
+                  <ArrowRight
+                    aria-hidden="true"
+                    size={18}
+                    className="transition-transform duration-300 group-hover:translate-x-1"
+                  />
+                </button>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -200,15 +305,8 @@ const Home = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-20 lg:gap-8">
             {RECENT_WORKS.map((work, i) => (
-              <motion.div
-                key={work.title}
-                initial={shouldReduceMotion ? false : { opacity: 0, y: 30 }}
-                whileInView={shouldReduceMotion ? {} : { opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ delay: shouldReduceMotion ? 0 : i * 0.1, duration: 0.8 }}
-                className="group"
-              >
-                <div className="relative aspect-[4/5.5] overflow-hidden rounded-[30px] bg-slate-100 mb-8 shadow-md">
+              <motion.div key={work.title} {...fadeUp(i * 0.12)} className="group">
+                <div className="relative aspect-[4/5.5] overflow-hidden rounded-2xl bg-slate-100 mb-8 shadow-md">
                   <img
                     src={work.image}
                     alt={work.title}
@@ -242,47 +340,84 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-20 md:py-32 bg-white overflow-hidden">
+      <section className="py-20 md:py-32 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            <div className="lg:col-span-7">
-              <span className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#C5A059] mb-8 block">
+            <motion.div
+              className="lg:col-span-7"
+              initial={reduceMotion ? 'show' : 'hidden'}
+              whileInView="show"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={{
+                hidden: {},
+                show: {
+                  transition: {
+                    staggerChildren: reduceMotion ? 0 : 0.14,
+                    delayChildren: reduceMotion ? 0 : 0.06,
+                  },
+                },
+              }}
+            >
+              <motion.span
+                variants={approachItem}
+                className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#C5A059] mb-8 block"
+              >
                 Our Approach
-              </span>
+              </motion.span>
 
-              <h2 className="text-4xl md:text-5xl font-semibold text-[#0D3D3D] leading-tight mb-5">
+              <motion.h2
+                variants={approachItem}
+                className="text-4xl md:text-5xl font-semibold text-[#0D3D3D] leading-tight mb-5"
+              >
                 AI Driven <br />
                 <span className="text-slate-300">Software Engineering.</span>
-              </h2>
+              </motion.h2>
 
-              <p className="text-md md:text-lg text-slate-600 leading-relaxed mb-5 md:mb-10">
+              <motion.p
+                variants={approachItem}
+                className="text-md md:text-lg text-slate-600 leading-relaxed mb-5 md:mb-10"
+              >
                 AI isn't just a feature we add; it's the foundation of how we build software. We
                 combine intelligent tools with modern engineering practices to create systems that
                 are faster to develop, easier to maintain, and designed to scale.
-              </p>
+              </motion.p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-8">
                 {APPROACH_ITEMS.map(item => {
                   const Icon = item.icon;
 
                   return (
-                    <div key={item.title} className="flex items-center gap-4">
+                    <motion.div
+                      key={item.title}
+                      variants={approachItem}
+                      className="flex items-center gap-4"
+                    >
                       <div className="w-12 h-12 bg-slate-50 rounded-xl flex items-center justify-center text-[#0D3D3D]">
                         <Icon />
                       </div>
                       <span className="font-bold text-slate-800">{item.title}</span>
-                    </div>
+                    </motion.div>
                   );
                 })}
               </div>
-            </div>
+            </motion.div>
 
-            <div className="lg:col-span-5">
-              <div className="relative aspect-square  flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0  opacity-20 pointer-events-none">
+            <motion.div
+              className="lg:col-span-5"
+              initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{
+                duration: reduceMotion ? 0 : 1.15,
+                delay: reduceMotion ? 0 : 0.18,
+                ease: EASE,
+              }}
+            >
+              <div className="relative aspect-square flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-0 opacity-20 pointer-events-none">
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_#C5A059_0%,_transparent_50%)]" />
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-full h-full rounded-3xl shadow-2xl flex items-center justify-center overflow-hidden">
+                  <div className="w-full h-full rounded-2xl shadow-2xl flex items-center justify-center overflow-hidden">
                     <img
                       src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop"
                       alt="AI Image"
@@ -291,7 +426,7 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -309,10 +444,7 @@ const Home = () => {
             {JOURNEY.map((step, i) => (
               <motion.div
                 key={step.id}
-                initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
-                whileInView={shouldReduceMotion ? {} : { opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ delay: shouldReduceMotion ? 0 : i * 0.1 }}
+                {...fadeUp(Math.min(i * 0.1, 0.4))}
                 className="group cursor-default"
               >
                 <div className="text-[11px] font-bold tracking-[0.2em] text-[#C5A059] mb-4">
@@ -326,7 +458,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <CTA />
+      <CTA animate />
     </main>
   );
 };

@@ -1,5 +1,4 @@
 import emailjs from '@emailjs/browser';
-import { motion } from 'framer-motion';
 import { Mail, CheckCircle2, LucideIcon } from 'lucide-react';
 import { useState } from 'react';
 import SharedHero from '@/components/sharedUi/SharedHero';
@@ -130,14 +129,9 @@ const Contact = () => {
       <div className="max-w-[1400px] mx-auto pt-24 px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-2 md:gap-4">
           <div className="lg:col-span-5 mb-20">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="mb-3 text-md text-slate-600 max-w-lg leading-relaxed"
-            >
+            <p className="mb-3 text-md text-slate-600 max-w-lg leading-relaxed">
               Our team responds to every inquiry within 24 hours.
-            </motion.p>
+            </p>
 
             <div className="space-y-6">
               <ContactInfoCard
@@ -156,13 +150,9 @@ const Contact = () => {
           </div>
 
           <div className="lg:col-span-7">
-            <div className="bg-[#F9FAFB] px-4 py-12 md:p-16 rounded-[20px] border border-slate-100 shadow-xl shadow-slate-100/50 relative overflow-hidden">
+            <div className="bg-[#F9FAFB] px-4 py-12 md:p-16 rounded-2xl border border-slate-100 shadow-xl shadow-slate-100/50 relative overflow-hidden">
               {submitted ? (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="text-center py-20"
-                >
+                <div className="text-center py-20">
                   <div className="w-20 h-20 bg-green-50 text-green-500 rounded-full flex items-center justify-center mx-auto mb-8">
                     <CheckCircle2 size={40} />
                   </div>
@@ -170,7 +160,7 @@ const Contact = () => {
                   <p className="text-slate-600">
                     One of our team members will be in touch within 24 hours.
                   </p>
-                </motion.div>
+                </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4 relative z-2">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
