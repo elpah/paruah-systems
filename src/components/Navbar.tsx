@@ -123,10 +123,10 @@ const Navbar = () => {
             type="button"
             className="md:hidden text-slate-900 p-2 relative z-[120]"
             onClick={() => (mobileMenuOpen ? closeMenu() : openMenu())}
-            aria-label={curtainUp ? 'Close menu' : 'Open menu'}
-            aria-expanded={curtainUp}
+            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileMenuOpen}
           >
-            {curtainUp ? (
+            {mobileMenuOpen ? (
               <X
                 aria-hidden="true"
                 size={24}
