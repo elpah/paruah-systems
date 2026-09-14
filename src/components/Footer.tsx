@@ -26,6 +26,7 @@ const SOLUTIONS_LINKS = [
   { label: 'Patient Management', to: '/solutions' },
   { label: 'School Management', to: '/solutions' },
   { label: 'Salon Management', to: '/solutions' },
+  { label: 'Restaurant Management', to: '/solutions' },
   { label: 'Web Development', to: '/custom' },
   { label: 'Mobile Development', to: '/custom' },
 ];

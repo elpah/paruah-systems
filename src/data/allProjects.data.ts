@@ -1,9 +1,9 @@
 export const ALL_PROJECTS = [
   {
-    title: 'DialysEase',
+    title: 'Dialysis Patient Management',
     category: 'Healthcare',
     type: 'solutions',
-    desc: 'Patient Management System',
+    desc: 'A digital platform designed to simplify dialysis patient management, treatment scheduling, and the day-to-day coordination of dialysis care.',
     image:
       'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_scale/v1787798963/website-mockup-style-1_c9yvbn.webp',
   },
@@ -49,8 +49,8 @@ export const ALL_PROJECTS = [
     type: 'custom',
     desc: 'Church Community Website',
     image:
-      'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_fill/icgclwt_k9kaxa.png',
-    link: 'http://icgclivingwordtemple.com/',
+      'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_fill/mockup-screens-diagonal_gv9w40.webp',
+    link: 'https://icgclivingwordtemple.com/',
   },
   {
     title: 'School Management App',
@@ -60,13 +60,21 @@ export const ALL_PROJECTS = [
     image:
       'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_fill/in-dev_oppies.png',
   },
-  // {
-  //   title: 'Kofi Asiedu',
-  //   category: 'Portfolio',
-  //   type: 'custom',
-  //   desc: 'Counsellor Portfolio Website',
-  //   image:
-  //     'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_fill/bka_yx1kzv.png',
-  //   link: 'https://bkasiedu.com/',
-  // },
+  {
+    title: 'Restaurant Management System',
+    category: 'Hospitality',
+    type: 'solutions',
+    desc: 'A restaurant operations platform that connects reservations, table management, ordering, and kitchen operations in one system.',
+    image:
+      'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_fill/in-dev_oppies.png',
+  },
+  {
+    title: 'Kin and Compass Travel & Tour',
+    category: 'Travel Consult',
+    type: 'custom',
+    desc: 'A travel consultancy web app with an admin portal for managing website data.',
+    image:
+      'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_fill/mockup-screens-opposite_wyyw5k.webp',
+    link: 'https://www.kinandcompasstravels.com/',
+  },
 ];

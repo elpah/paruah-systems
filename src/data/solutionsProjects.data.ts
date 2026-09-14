@@ -1,4 +1,4 @@
-import { School, Users, ShoppingBag, LucideIcon } from 'lucide-react';
+import { School, Users, ShoppingBag, UtensilsCrossed, LucideIcon } from 'lucide-react';
 
 export type SolutionProject = {
   id: string;
@@ -49,18 +49,18 @@ export const SOLUTION_PROJECTS: SolutionProject[] = [
     badgeLabel: 'Healthcare',
     badgeIcon: Users,
     title: {
-      main: 'Patient Management',
-      accent: '& Booking.',
+      main: 'Dialysis Patient',
+      accent: 'Management.',
     },
     description:
-      'A patient management foundation that streamlines clinical workflows and automates the patient journey from first click to follow-up.',
+      'A digital platform designed to simplify dialysis patient management, treatment scheduling, and the day-to-day coordination of dialysis care.',
     features: [
-      'Smart Patient Intake',
-      'Resource Scheduling',
-      'Secure Health Records',
-      'Billing Automation',
-      'Telehealth Bridge',
-      'Patient Analytics',
+      'Patient Management',
+      'Dialysis Scheduling',
+      'Treatment Tracking',
+      'Appointment Management',
+      'Patient Records',
+      'Care Coordination',
     ],
     image:
       'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_fill/in-dev_oppies.png',
@@ -91,5 +91,27 @@ export const SOLUTION_PROJECTS: SolutionProject[] = [
       'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_fill/in-dev_oppies.png',
     mockupOuterClassName: 'bg-[#F8FAFA]',
     reverse: true,
+  },
+  {
+    id: 'restaurant-management',
+    badgeLabel: 'Restaurant Management',
+    badgeIcon: UtensilsCrossed,
+    title: {
+      main: 'Restaurant Management',
+      accent: 'System.',
+    },
+    description:
+      'A restaurant operations platform that connects reservations, table management, ordering, and kitchen operations in one system.',
+    features: [
+      'Table Reservations',
+      'Table Management',
+      'Order Management',
+      'Kitchen Display System',
+      'Menu Management',
+      'Inventory Management',
+    ],
+    image:
+      'https://res.cloudinary.com/dvwpuenzk/image/upload/f_auto,q_100,w_1800,c_fill/in-dev_oppies.png',
+    mockupOuterClassName: 'bg-[#F9FAFB]',
   },
 ];

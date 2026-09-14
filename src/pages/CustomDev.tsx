@@ -2,7 +2,6 @@ import CloudSection from '@/components/CloudSection';
 import SharedHero from '@/components/sharedUi/SharedHero';
 import { CUSTOM_SERVICES } from '@/data/customServices.data';
 // import { CUSTOM_PROJECTS } from '@/data/customProjects';
-// import { motion } from 'framer-motion';
 // import { ArrowUpRight, ExternalLink } from 'lucide-react';
 import { CheckCircle2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';

@@ -121,8 +121,8 @@ const Contact = () => {
     <main className="pb-24 bg-white">
       <SharedHero
         cat="CONNECT"
-        header="Let's Engineer"
-        italicHeader="what's next"
+        header="Let's Build Your"
+        italicHeader="Next Project"
         paragraph="Tell us about your idea or project, and we’ll help you turn it into a reliable digital system."
       />
 
